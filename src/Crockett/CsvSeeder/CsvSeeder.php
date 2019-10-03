@@ -3,6 +3,7 @@
 namespace Crockett\CsvSeeder;
 
 use DB;
+use Illuminate\Support\Arr;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
 
@@ -548,7 +549,7 @@ class CsvSeeder extends Seeder
             // apply column alias
             $column = $this->aliasColumn($column);
             if (array_search($column, $this->table_columns) === false) {
-                array_pull($columns, $index);
+                Arr::pull($columns, $index);
             }
         }
 
